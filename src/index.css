@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Cairo", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Cairo", sans-serif;
+  --font-serif: "Amiri", serif;
+  
+  --color-brand-primary: #D4AF37; /* Sophisticated Gold */
+  --color-brand-secondary: #050505; /* Deep Black */
+  --color-brand-surface: #0A0A0A;
+  --color-brand-muted: #111111;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    direction: rtl;
+  }
+  
+  body {
+    @apply bg-[#050505] text-white font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight;
+  }
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-linear-to-l from-[#D4AF37] to-[#f3e3ad];
+}
+
+.card-hover {
+  @apply border border-brand-primary/20 bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-500;
+}
+
+.geometric-line {
+  background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+}
+
+.stat-box {
+  @apply border-r border-[#D4AF37]/50 pr-6;
+}
+
+.markdown-body {
+  @apply text-inherit;
+}
+
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  @apply text-brand-primary font-serif mb-2 mt-4 first:mt-0;
+}
+
+.markdown-body h1 { @apply text-xl; }
+.markdown-body h2 { @apply text-lg; }
+.markdown-body h3 { @apply text-base; }
+
+.markdown-body p {
+  @apply mb-3 last:mb-0;
+}
+
+.markdown-body ul, .markdown-body ol {
+  @apply mb-3 pl-4 pr-4 list-disc;
+}
+
+.markdown-body li {
+  @apply mb-1;
+}
+
+.markdown-body table {
+  @apply w-full border-collapse mb-4 mt-2 text-xs;
+}
+
+.markdown-body th, .markdown-body td {
+  @apply border border-white/10 p-2 text-left;
+}
+
+.markdown-body th {
+  @apply bg-white/5 font-bold text-brand-primary;
+}
+
+.markdown-body tr:nth-child(even) {
+  @apply bg-white/[0.02];
+}
+
+.markdown-body strong {
+  @apply text-brand-primary font-bold;
+}
+
+.markdown-body blockquote {
+  @apply border-l-2 border-brand-primary/50 pl-4 italic text-gray-500 mb-3;
+}
+
+.markdown-body code {
+  @apply bg-white/10 px-1 py-0.5 rounded text-brand-primary font-mono text-[10px];
+}
+
+.markdown-body pre {
+  @apply bg-white/5 p-4 rounded-lg overflow-x-auto mb-4 border border-white/10;
+}
+
+.markdown-body pre code {
+  @apply bg-transparent p-0 block;
+}
